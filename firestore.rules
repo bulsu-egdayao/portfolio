@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Inquiries: Allow public visitors to submit messages (create), but only admin to read/delete
+    match /inquiries/{inquiryId} {
+      allow create: if request.resource.data.name is string 
+                    && request.resource.data.email is string
+                    && request.resource.data.subject is string
+                    && request.resource.data.message is string;
+      allow read, update, delete: if false; // Protect inquiry data from public reading
+    }
+  }
+}
