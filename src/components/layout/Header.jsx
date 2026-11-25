@@ -17,8 +17,11 @@ export function Header({ theme, toggleTheme }) {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
         
         {/* Brand / Logo */}
-        <a href="#top" className="group flex items-baseline gap-2.5">
-          <span className="inline-block h-3 w-3 translate-y-[1px] rounded-full bg-sun transition-transform group-hover:scale-125" />
+        <a href="#top" className="group flex items-center gap-2.5">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-jet border border-sun/40 text-xs font-black tracking-tighter font-display shadow-sm transition-transform group-hover:scale-105">
+            <span className="text-white">E</span>
+            <span className="text-sun">D</span>
+          </div>
           <span className="font-display text-lg font-bold tracking-tight text-ink">
             Ezekiel Dayao
           </span>
